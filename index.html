@@ -4,45 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      line-height: 1.6;
-      background: #f5f7fa;
-      color: #333;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+      color: #e2e8f0;
     }
 
     header {
-      background: #0f172a;
-      color: #fff;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 3rem 1rem 2rem;
+      animation: fadeDown 1s ease;
     }
 
     header img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.2);
       margin-bottom: 1rem;
-      border: 3px solid #fff;
+      transition: 0.3s;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+
+    .typing {
+      color: #94a3b8;
+      margin-top: 5px;
+      font-size: 1rem;
+      border-right: 2px solid #94a3b8;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30, end), blink 0.7s infinite;
     }
 
     nav {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     nav a {
-      color: #cbd5f5;
-      margin: 0 10px;
+      color: #94a3b8;
+      margin: 0 12px;
       text-decoration: none;
       font-size: 0.95rem;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -53,53 +77,104 @@
       padding: 2rem 1rem;
       max-width: 900px;
       margin: auto;
+      animation: fadeUp 1s ease;
     }
 
     h2 {
       margin-bottom: 1rem;
-      color: #0f172a;
-      border-bottom: 2px solid #e2e8f0;
+      font-size: 1.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       padding-bottom: 0.5rem;
     }
 
     .card {
-      background: #fff;
-      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 1.2rem;
       margin-bottom: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     }
 
     .skills span {
       display: inline-block;
-      background: #e2e8f0;
-      padding: 6px 10px;
+      background: rgba(255,255,255,0.08);
+      padding: 6px 12px;
       margin: 5px;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 0.85rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      background: rgba(255,255,255,0.2);
     }
 
     .contact a {
-      display: block;
-      margin-bottom: 8px;
-      color: #2563eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
       text-decoration: none;
+      color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
     }
 
     .contact a:hover {
-      text-decoration: underline;
+      background: rgba(255,255,255,0.1);
+      transform: scale(1.02);
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.1);
+      color: #94a3b8;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       font-size: 0.8rem;
-      color: #666;
+      color: #64748b;
     }
 
-    @media (min-width: 600px) {
-      nav a {
-        font-size: 1rem;
+    /* Animations */
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes typing {
+      from {width: 0}
+      to {width: 220px}
+    }
+
+    @keyframes blink {
+      50% {border-color: transparent;}
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.7rem;
       }
     }
   </style>
@@ -109,35 +184,54 @@
   <header>
     <img src="https://via.placeholder.com/150" alt="Profile Photo">
     <h1>Your Name</h1>
-    <p>Your Professional Title</p>
+    <div class="typing">Your Professional Title</div>
+
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
     </nav>
   </header>
+
+  <section>
+    <div class="card contact">
+      <a href="mailto:your.email@example.com">
+        <span>Email<br><small>your.email@example.com</small></span>
+        <span class="tag">CONTACT</span>
+      </a>
+
+      <a href="#">
+        <span>LinkedIn<br><small>linkedin.com/in/yourname</small></span>
+        <span class="tag">LINK</span>
+      </a>
+
+      <a href="#">
+        <span>GitHub<br><small>github.com/yourhandle</small></span>
+        <span class="tag">CODE</span>
+      </a>
+
+      <a href="#">
+        <span>Portfolio<br><small>yourdomain.com</small></span>
+        <span class="tag">SITE</span>
+      </a>
+    </div>
+  </section>
 
   <section id="about">
     <h2>About</h2>
     <div class="card">
-      <p>
-        <!-- Replace with your summary -->
-        Write a short professional summary about yourself, your background,
-        and your goals.
-      </p>
+      <p>Write a short professional summary about yourself.</p>
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="card skills">
-      <!-- Replace with your skills -->
-      <span>Skill 1</span>
-      <span>Skill 2</span>
-      <span>Skill 3</span>
-      <span>Skill 4</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
     </div>
   </section>
 
@@ -146,13 +240,7 @@
     <div class="card">
       <h3>Job Title</h3>
       <p><strong>Company Name</strong> | Year - Year</p>
-      <p>Brief description of your responsibilities and achievements.</p>
-    </div>
-
-    <div class="card">
-      <h3>Another Role</h3>
-      <p><strong>Company Name</strong> | Year - Year</p>
-      <p>Brief description of your responsibilities and achievements.</p>
+      <p>Describe your work.</p>
     </div>
   </section>
 
@@ -160,36 +248,13 @@
     <h2>Projects</h2>
     <div class="card">
       <h3>Project Name</h3>
-      <p>Short description of the project.</p>
-      <p>
-        <a href="#" target="_blank">Live Demo</a> |
-        <a href="#" target="_blank">GitHub</a>
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Another Project</h3>
-      <p>Short description of the project.</p>
-      <p>
-        <a href="#" target="_blank">Live Demo</a> |
-        <a href="#" target="_blank">GitHub</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card contact">
-      <!-- Replace with your contact details -->
-      <a href="mailto:your.email@example.com">your.email@example.com</a>
-      <a href="#">LinkedIn Profile</a>
-      <a href="#">GitHub Profile</a>
-      <a href="#">Portfolio Link</a>
+      <p>Short description.</p>
+      <p><a href="#">Live</a> | <a href="#">GitHub</a></p>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Your Name. All rights reserved.</p>
+    <p>© 2026 Your Name</p>
   </footer>
 
 </body>
