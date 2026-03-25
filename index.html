@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #fff;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #cbd5f5;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #e2e8f0;
+      padding: 6px 10px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 0.85rem;
+    }
+
+    .contact a {
+      display: block;
+      margin-bottom: 8px;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    @media (min-width: 600px) {
+      nav a {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://via.placeholder.com/150" alt="Profile Photo">
+    <h1>Your Name</h1>
+    <p>Your Professional Title</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="card">
+      <p>
+        <!-- Replace with your summary -->
+        Write a short professional summary about yourself, your background,
+        and your goals.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card skills">
+      <!-- Replace with your skills -->
+      <span>Skill 1</span>
+      <span>Skill 2</span>
+      <span>Skill 3</span>
+      <span>Skill 4</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Job Title</h3>
+      <p><strong>Company Name</strong> | Year - Year</p>
+      <p>Brief description of your responsibilities and achievements.</p>
+    </div>
+
+    <div class="card">
+      <h3>Another Role</h3>
+      <p><strong>Company Name</strong> | Year - Year</p>
+      <p>Brief description of your responsibilities and achievements.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Project Name</h3>
+      <p>Short description of the project.</p>
+      <p>
+        <a href="#" target="_blank">Live Demo</a> |
+        <a href="#" target="_blank">GitHub</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Another Project</h3>
+      <p>Short description of the project.</p>
+      <p>
+        <a href="#" target="_blank">Live Demo</a> |
+        <a href="#" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card contact">
+      <!-- Replace with your contact details -->
+      <a href="mailto:your.email@example.com">your.email@example.com</a>
+      <a href="#">LinkedIn Profile</a>
+      <a href="#">GitHub Profile</a>
+      <a href="#">Portfolio Link</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Your Name. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
